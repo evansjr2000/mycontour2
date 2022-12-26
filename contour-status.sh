@@ -8,5 +8,7 @@ else
     export MYCMD="kubectl"
 fi
 
+set -x
+
 $MYCMD get po,svc,deploy,daemonset -n projectcontour
 

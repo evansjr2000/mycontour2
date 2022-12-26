@@ -26,7 +26,7 @@ spec:
             - containerPort: 8000
           env:
             - name: MESSAGE
-              value: hello from app1
+              value: hello from app1\n
 ---
 kind: Service
 apiVersion: v1
