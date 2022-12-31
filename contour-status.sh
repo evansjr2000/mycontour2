@@ -11,4 +11,6 @@ fi
 set -x
 
 $MYCMD get po,svc,deploy,daemonset -n projectcontour
+$MYCMD get httpproxy -A
+
 
