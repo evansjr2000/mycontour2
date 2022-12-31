@@ -1,42 +1,41 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: app1
+  name: app3
 ---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: app1
-  namespace: app1
+  name: app3
+  namespace: app3
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: app1
+      app: app3
   template:
     metadata:
       labels:
-        app: app1
+        app: app3
     spec:
       containers:
-        - name: app1
-          image: docker.io/evansjr/basic-web-server:latest
+        - name: app3
+          image: docker.io/kennethreitz/httpbin
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 80
           env:
             - name: MESSAGE
-              value: "hello from app1.  "
+              value: hello from app3\n
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: app1
-  namespace: app1
+  name: app3
+  namespace: app3
 spec:
   selector:
-    app: app1
+    app: app3
   ports:
     - port: 80
-      targetPort: 8000
-
+      targetPort: 80

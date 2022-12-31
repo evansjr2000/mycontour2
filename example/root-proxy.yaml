@@ -14,3 +14,7 @@ spec:
       namespace: app2
       conditions:
         - prefix: /app2
+    - name: app3
+      namespace: app3
+      conditions:
+        - prefix: /app3
